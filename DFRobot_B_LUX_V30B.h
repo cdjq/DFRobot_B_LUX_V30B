@@ -149,6 +149,7 @@ public:
   /**
    * @brief 设置寄存器模式
    * @param mode 需要配置的模式
+   * @return 成功时返回 1，失败返回 0
    */
   uint8_t setMode(uint8_t isManualMode=0,uint8_t isCDR=0,uint8_t isTime=0);
   /**
@@ -168,7 +169,6 @@ private:
   void iicStopBit(void);
   /**
    * @brief IIC 主机发送一个应答
-   * @return 当前周期SDA的值
    */
   void iicSendAck(uint8_t ack);
   /**
@@ -179,12 +179,12 @@ private:
   /**
    * @brief 发送一字节数据
    * @param data 需要发送的数据，可以是寄存器地址也可以是数据
-   * @return 应答
+   * @return 返回值为0代表ACK ，返回值为1代表NACK
    */
   uint8_t iicSend(uint8_t data);
   /**
    * @brief 接收一字节数据
-   * @return 应答 返回0：ACK ，返回1：NACK
+   * @return 返回值为0代表ACK ，返回值为1代表NACK
    */
   uint8_t iicReadByte();
 
@@ -192,6 +192,7 @@ private:
    * @brief 进行读操作
    * @param num 要读的寄存器个数
    * @param *data 接收数据的地址
+   * @return 成功时返回 1，失败返回 0
    */
   uint8_t iicRead(uint8_t num, uint8_t* data);
 
