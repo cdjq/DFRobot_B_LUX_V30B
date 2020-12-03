@@ -1,5 +1,5 @@
 # DFRobot_B_LUX_V30B
-这是一个获取光照强度的传感器，IIC地址不可改变，可以通过IIC，，IIC地址不可改变，它有下面这些功能：
+这是一个获取光照强度的传感器，IIC地址不可改变，可以通过IIC，IIC地址不可改变，它有下面这些功能：
 
  * 向寄存器0x04里写入配置，设置不同的采集精度
  * 从寄存器0x00~0x03里读出光照强度数据
@@ -75,9 +75,9 @@ To use this library, first download the library file, paste it into the \Arduino
 ## History
 
 - data 2020-12-03
-- version V2.0
+- version V1.0
 
 
 ## Credits
 
-Written by Alexander(fary_young@outlookcom), 2020. (Welcome to our [website](https://www.dfrobot.com/))
+Written by Alexander(fary_young@outlook.com), 2020. (Welcome to our [website](https://www.dfrobot.com/))

@@ -14,10 +14,7 @@
 DFRobot_B_LUX_V30B    myLux(13);//传感器片选设置为13引脚，SCL、SDA采用默认配置
   /* 
    * MANUAL寄存器
-   *   eAutomatic：默认自动配置寄存器,使用该模式后不必配置以下模式，IC自动配置。
-   *   
-   *   
-   *   
+   *   eAutomatic：默认自动配置寄存器,使用该模式后不必配置以下模式，IC自动配置。 
    *   eManual ：手动配置寄存器，配置该模式后与后面的模式组合使用
    * CDR寄存器
    *   eCDR_0：不划分分流比寄存器
@@ -56,15 +53,10 @@ void setup() {
   /* 
    * setmode与readMode可以省略，不配置时默认为上次使用时的配置
    * 使用setMode时需对其返回值进行判断，返回值为1即设置成功
-   */
-  while(1){
-    if(myLux.setMode(myLux.eManual,myLux.eCDR_0,myLux.eTime800ms)){
-      break;
-    }
-  }
-  Serial.print("mode: ");
-  Serial.println(myLux.readMode());
-
+   * while(!myLux.setMode(myLux.eManual,myLux.eCDR_0,myLux.eTime800ms));
+   * Serial.print("mode: ");
+   * Serial.println(myLux.readMode());
+  */
 }
 
 void loop() {

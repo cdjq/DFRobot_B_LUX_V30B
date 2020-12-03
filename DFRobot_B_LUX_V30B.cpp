@@ -3,10 +3,10 @@
  * @brief 定义DFRobot_B_LUX_V30B类中方法的实现
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
- * @author [Fary](Fary.young@outlook.com)
- * @version  V2.0
+ * @author [Fary](Fary_young@outlook.com)
+ * @version  V1.0
  * @date  2020-12-03
- * @https://github.com/fary99/DFRobot_B_LUX_V30B
+ * @https://github.com/cdjq/DFRobot_B_LUX_V30B
  */
 
 #include <DFRobot_B_LUX_V30B.h>

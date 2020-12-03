@@ -6,10 +6,10 @@
  * @n 从寄存器0x00~0x03里读出光照强度数据
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
- * @author [Fary](Fary.young@outlook.com)
+ * @author [Fary](Fary_young@outlook.com)
  * @version  V2.0
  * @date  2020-12-03
- * @https://github.com/fary99/DFRobot_B_LUX_V30B
+ * @https://github.com/cdjq/DFRobot_B_LUX_V30B
  */
 #ifndef  _DFROBOT_B_LUX_V30B_H_
 #define  _DFROBOT_B_LUX_V30B_H_
