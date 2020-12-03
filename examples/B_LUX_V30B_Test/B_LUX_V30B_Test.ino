@@ -8,7 +8,7 @@
  * @author [Fary](fary_young@outlook.com)
  * @version  V1.0
  * @date  2020-12-03
- * @https://github.com/fary99/DFRobot_B_LUX_V30B
+ * @https://github.com/cdjq/DFRobot_B_LUX_V30B
  */
 #include <DFRobot_B_LUX_V30B.h>
 DFRobot_B_LUX_V30B    myLux(13);//传感器片选设置为13引脚，SCL、SDA采用默认配置

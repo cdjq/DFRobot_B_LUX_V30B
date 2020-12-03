@@ -203,10 +203,8 @@ uint8_t DFRobot_B_LUX_V30B::iicRead(uint8_t num, uint8_t* data)
 }
 float DFRobot_B_LUX_V30B::lightStrengthLux()
 {
-  
   uint32_t value = 0;
   uint8_t data[6];
-
   if(iicRead(4,data)){
   value = data[3];
   value = (value<<8)|data[2];
