@@ -28,7 +28,7 @@ To use this library, first download the library file, paste it into the \Arduino
 ## Methods
 
 ```C++
-    /**
+  /**
    * @brief 构造函数
    * @param cEN 传感器片选引脚
    * @param scl 传感器时钟线，默认指定为SCL
@@ -46,14 +46,14 @@ To use this library, first download the library file, paste it into the \Arduino
   void begin(void);
   /**
    * @brief 获取光照强度
-   * @return 获取的光照强度值
+   * @return 成功返回获取的光照强度值，失败返回-1
    */
-  uint32_t lightStrengthLux(void);
+  float lightStrengthLux(void);
   /**
    * @brief 设置寄存器模式
    * @param mode 需要配置的模式
    */
-  void setMode(uint8_t mode);
+  uint8_t setMode(uint8_t isManualMode=0,uint8_t isCDR=0,uint8_t isTime=0);
   /**
    * @brief 获取寄存器模式
    * @return 配置的模式
@@ -66,16 +66,16 @@ To use this library, first download the library file, paste it into the \Arduino
 | MCU           | Work Well | Work Wrong | Untested | Remarks |
 | ------------- | :-------: | :--------: | :------: | ------- |
 | Arduino uno   |     √     |            |          |         |
-| Mega2560      |           |            |          |         |
+| Mega2560      |     √     |            |          |         |
 | Leonardo      |           |            |          |         |
-| mPython/ESP32 |           |            |          |         |
-| micro:bit     |           |            |          |         |
+| mPython/ESP32 |     √     |            |          |         |
+|               |           |            |          |         |
 
 
 ## History
 
-- data 2020-12-02
-- version V1.0
+- data 2020-12-03
+- version V2.0
 
 
 ## Credits

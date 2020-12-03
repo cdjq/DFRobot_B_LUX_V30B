@@ -7,8 +7,8 @@
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @author [Fary](Fary.young@outlook.com)
- * @version  V1.0
- * @date  2020-12-02
+ * @version  V2.0
+ * @date  2020-12-03
  * @https://github.com/fary99/DFRobot_B_LUX_V30B
  */
 #ifndef  _DFROBOT_B_LUX_V30B_H_
@@ -41,7 +41,6 @@ class DFRobot_B_LUX_V30B{
 public:
   #define ACK        0x00
   #define NACK       0x01
-  #define INTERVAL   uint(1000)
   
   /*
    这里从数据手册上抄写关于这个寄存器的描述
@@ -145,14 +144,14 @@ public:
   void begin(void);
   /**
    * @brief 获取光照强度
-   * @return 获取的光照强度值
+   * @return 成功返回获取的光照强度值，失败返回-1
    */
-  uint32_t lightStrengthLux(void);
+  float lightStrengthLux(void);
   /**
    * @brief 设置寄存器模式
    * @param mode 需要配置的模式
    */
-  void setMode(uint8_t mode);
+  uint8_t setMode(uint8_t isManualMode=0,uint8_t isCDR=0,uint8_t isTime=0);
   /**
    * @brief 获取寄存器模式
    * @return 配置的模式
@@ -162,39 +161,40 @@ private:
   /**
    * @brief IIC开始信号
    */
-  void IIC_startBit(void);
+  void iicStartBit(void);
   /**
    * @brief IIC停止信号
    */
-  void IIC_stopBit(void);
+  void iicStopBit(void);
   /**
-   * @brief IIC一个时钟周期
+   * @brief IIC 主机发送一个应答
    * @return 当前周期SDA的值
    */
-  uint8_t IIC_oneclock(void);
+  void iicSendAck(uint8_t ack);
+  /**
+   * @brief IIC 主机接收一个应答
+   * @return 当前周期SDA的值
+   */
+  uint8_t iicRecvAck(void);
   /**
    * @brief 发送一字节数据
    * @param data 需要发送的数据，可以是寄存器地址也可以是数据
    * @return 应答
    */
-  uint8_t IIC_send(uint8_t data);
+  uint8_t iicSend(uint8_t data);
   /**
    * @brief 接收一字节数据
-   * @param ack 需要发送的应答，可以是ACK也可以是NACK
-   * @param *data 接收数据的缓存
-   * @return 应答
+   * @return 应答 返回0：ACK ，返回1：NACK
    */
-  uint8_t IIC_read_byte(uint8_t ack, uint8_t* data);
+  uint8_t iicReadByte();
+
   /**
-   * @brief 要进行读操作的前半部的写操作
-   * @param data 要读的寄存器地址
+   * @brief 进行读操作
+   * @param num 要读的寄存器个数
+   * @param *data 接收数据的地址
    */
-  void IIC_write(uint8_t data);
-  /**
-   * @brief 要进行读操作的后半部读寄存器值
-   * @param data 要读的寄存器地址
-   */
-  void IIC_read(uint8_t num, uint8_t* data);
+  uint8_t iicRead(uint8_t num, uint8_t* data);
+
 private:
   uint8_t _SDA;
   uint8_t _SCL;
@@ -202,3 +202,23 @@ private:
   uint8_t _deviceAddr;
 };
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
