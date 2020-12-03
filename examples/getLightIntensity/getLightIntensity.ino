@@ -28,7 +28,7 @@ DFRobot_B_LUX_V30B    myLux(13);//传感器片选设置为13引脚，SCL、SDA�
    *   eTime25ms:采集时间25ms
    *   eTime12_5ms:采集时间12.5ms
    *   eTime6_25ms:采集时间6.25ms
-   * 手动模式组合（采集值不能超过各种模式的量程最大值）
+   * 手动模式组合（采集值不能超过各种模式的量程最大值，若所读数据超过量程，则该数据不具有正确性）
    *   eManual+eCDR_0+eTime800ms    mode=64    采集最大值为：2938（lux）
    *   eManual+eCDR_0+eTime400ms    mode=65    采集最大值为：5875（lux）
    *   eManual+eCDR_0+eTime200ms    mode=66    采集最大值为：11750（lux）
